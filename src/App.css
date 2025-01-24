@@ -1,0 +1,78 @@
+/* Basic Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  font-size: 18px; /* Increased the base font size */
+}
+
+header {
+  background: #333;
+  color: #fff;
+  padding: 20px 40px; /* Increased padding */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px; /* Larger font for title */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px; /* Increased font size */
+  cursor: pointer;
+  text-decoration: none;
+}
+
+nav ul li button:hover {
+  text-decoration: underline;
+}
+
+main {
+  transition: opacity 0.5s ease-in-out; /* Smooth transition */
+  padding: 40px; /* Increased padding */
+}
+
+/* Hidden state for fading effect */
+.hidden {
+  opacity: 0;
+}
+
+/* Section Styles */
+section {
+  padding: 30px;
+  border-bottom: 1px solid #ddd;
+  font-size: 20px; /* Increased font size for content */
+}
+
+h2 {
+  font-size: 32px; /* Increased font size for sub-headings */
+}
+
+p {
+  line-height: 1.6; /* Adjusted line-height for readability */
+  font-size: 18px; /* Increased font size for paragraph text */
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+  font-size: 16px;
+}
