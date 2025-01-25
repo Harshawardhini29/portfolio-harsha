@@ -1,0 +1,1159 @@
+DAY 1
+
+let a=[12,4,"sai",23.4]
+console.log("b4 del",a.length)
+res=delete a[1]
+console.log(a)
+
+console.log("after del",a.length)
+
+for(let i=0;i<a.length;i++)
+console.log(a[i])
+
+==========================
+let a=[12,4,1]
+var s=0
+ 
+
+for(let i=0;i<a.length;i++)
+s=s+a[i]
+console.log(s)
+============================
+let a=[10,20,30,40,50]
+let b=[100,200,300]
+console.log('len: ',a.length)
+ 
+a.splice(1,2,b)//index, how many ele u dnt want
+console.log('len : ',a.length)
+console.log('datas : ',a)
+==============================
+let a=[10,20,30,40,50,60,70]
+res = a.slice(1,4)
+console.log(res)
+============================
+let person={
+  roll:12,
+  name:"sai"
+}
+console.log(person)
+console.log("dot notation: ",person.name ," ",person.roll)
+console.log("sqr brkt notation: ",person["name"] ," ",person["roll"])
+============================================
+let person={
+  roll:12,
+  name:"sai"
+}
+person.name="ram"
+person['roll']=1
+console.log(person)
+================================
+let person={
+  roll:12,
+  name:"sai"
+}
+person.city="CBE"
+person['state']='TN'
+person.name="ram"
+person['roll']=1
+console.log(person)
+==============================
+let person=[{
+  roll:12,
+  name:"sai"
+},{
+  roll:13,
+  name:"ram"
+}
+
+]
+ 
+console.log(person)
+for(let a of person)
+console.log(a.roll," "+a['name'])
+//console.log(a)
+=========================
+let person={
+  roll:12,
+  name:"sai",
+  city:'ceb',
+  state:'tn'
+} 
+ 
+ 
+console.log(person)
+for(let key in person)
+console.log(key ," : ",person[key])
+===============================
+
+DAY-2
+
+let a=[1,2,3,4]
+let b=['hai','hello','welcome',a]
+ 
+console.log('added the arr: ',b)
+ b=['hai','hello','welcome',...a]
+ 
+console.log('used res operator',b)
+ 
+===================================
+let a=[1,2,3,4]
+let b=['hai','hello','welcome']
+ b.push(...a)
+console.log('the ans: ',b)
+ 
+==============================
+
+function add()
+{
+    console.log('welcome')// NANR
+}
+
+console.log('hai')
+add()
+ 
+ 
+==========================
+function add(a,b)// WANR
+{
+    c=a+b
+}
+
+console.log('hai')
+add(10,12)
+ 
+ 
+=========================
+
+function add(a,b)// WANR
+{
+    c=a+b
+    return c
+}
+
+console.log('hai')
+res=add(10,12)
+console.log(res)
+ 
+ 
+=====================
+
+function add(...a)// WAWR
+{
+    s=0
+    for(let i=0;i<a.length;i++)
+     s=s+a[i]
+    return s
+}
+ 
+
+console.log('hai')
+res=add(1,2,2,2,2,2,3,)
+ 
+console.log(res)
+ 
+ 
+====================================
+
+function add(b,...a)// WAWR
+{
+    console.log('the b is: ',b)
+    s=0
+    for(let i=0;i<a.length;i++)
+     s=s+a[i]
+    return s
+}
+ 
+
+console.log('hai')
+res=add(100,1,2,2,2,2,2,3)
+ 
+console.log(res)
+ 
+ 
+=============================
+
+function add(b,...a)// WAWR
+{
+    console.log('the b is: ',b)
+    s=0
+    for(let i=0;i<a.length;i++)
+     s=s+a[i]
+    return s
+}
+ 
+
+console.log('hai')
+res=add()
+ 
+console.log(res)
+ 
+ 
+=================================
+
+function add(b,...a)// WAWR
+{
+    console.log('the b is: ',b)
+    s=0
+    for(let i=0;i<a.length;i++)
+     s=s+a[i]
+    return s
+}
+ 
+
+console.log('hai')
+res=add(10)
+ 
+console.log(res)
+ 
+ ===========================
+
+function add()// NAWR
+{
+    
+    return 'welcome'
+}
+ 
+
+console.log('hai')
+res=add()
+ 
+console.log(res)
+========================
+let a=[1,2,3,34]
+let [p,q,r,s]=a
+
+console.log(p)
+console.log(q)
+console.log(r)
+console.log(s)
+===========================
+let a=[1,2,3,40,58,60,70,80,90]
+let [p,q,...restdata ]=a
+ 
+console.log(p)
+console.log(q)
+
+console.log(restdata,typeof(restdata))
+
+let[r1,r2]=restdata
+
+ console.log(r1)
+console.log(r2)
+=================================
+function out()
+{
+    function inner()
+    {
+        console.log('im inside the inner fun!!!')
+        
+    }
+    console.log('im inside the out fun')
+   return inner
+}
+inn=out()
+inn()
+
+=================
+function out()
+{
+     console.log('im inside the out fun')
+    return function()
+    {
+        console.log('im inside the inner fun!!!')
+        
+    }
+   
+   
+}
+inn=out()
+inn()
+
+==================
+let myFun=function out() // function expression
+{
+     console.log('im inside the out fun')
+    return function()
+    {
+        console.log('im inside the inner fun!!!')
+        
+    }
+   
+   
+}
+inn=myFun()
+inn()
+
+=====================
+ 
+inn=myFun()
+inn()
+let myFun=function out()
+{
+     console.log('im inside the out fun')
+    return function()
+    {
+        console.log('im inside the inner fun!!!')
+        
+    }
+}
+
+// inn=out()
+// inn()
+==================
+Form2.js
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setUsers } from "./slices/userSlice";
+
+function Form2() {
+
+  
+
+  
+    const [data, setdata] = useState({
+        name: "",
+        rollno: "",
+        gender: "",
+        city: "",
+        phone: ""
+    });
+   
+
+
+    function updatedata(d)
+    {
+        let variable=d.target.name
+        let value=d.target.value
+        console.log('the variable is: ',variable," the value is: ",value)
+        setdata((data)=>{
+            return{...data,[variable]:value}
+        })
+    }
+
+    function formSubmit(e) {
+        e.preventDefault()
+
+        console.log("....sucess", data);
+    }
+
+    return (
+        <>
+            <form onSubmit={formSubmit}>
+                <div>
+                Name:<input type="text" name='name' onChange={updatedata}></input>
+                </div>
+                <div>
+                RollNo:<input type="text" name='rollno' onChange={updatedata}></input>
+                </div>
+                <div>
+                City:<input type="text" name='city' onChange={updatedata}></input>
+                </div>
+                <div>
+                Gender:<input type="text" name='gender' onChange={updatedata}></input>
+                </div>
+                <div>
+               Phone:<input type="text" name='phone' onChange={updatedata}></input>
+                </div>
+                <div>
+                <button type="submit">Signup</button>
+                </div>
+               
+
+
+                
+            </form>
+            <h1>The name is: {data.name}</h1>
+            <h1>The rollno is: {data.rollno}</h1>
+            <h1>The city is: {data.city}</h1>
+            <h1>The gender is: {data.gender}</h1>
+            <h1>The phone is: {data.phone}</h1>
+
+        </>
+    );
+}
+
+export default Form2;
+============================
+Installation of react-app
+==============================
+useState-Hook
+import { useState } from "react"
+
+export default function States(){
+    //var clr='blue'
+    var [clr,setClr]= useState('blue')
+    console.log("b4  : ",clr)
+      
+    return(
+        <>
+        <h1>i love {clr} color</h1>
+        <button onClick={()=>{setClr(clr='red')} }>click here!! </button>
+        </>
+    )
+}
+===========================
+import { useState } from "react"
+
+export default function States(){
+    
+    // var [clr,setClr]= useState('blue')
+    // var [name,setName]= useState('sai')
+     var [data,setData]=useState(
+        {
+            clr:'pink',
+            name:'sai'
+        }
+     )
+     
+    return(
+        <>
+        <h1> my name is {data.name}<br></br> i love {data.clr} color</h1>
+        <button onClick={()=>{ setData(
+            {
+                
+                    clr:'green',
+                    name:'ram'
+                 
+            }
+        )}
+            }>click here!! </button>
+        </>
+    )
+}
+=========================================
+
+DAY-3
+
+Usage of Hooks in react
+useEffect-Hook
+import { useEffect,useReducer,useState } from "react";
+
+export default function Demo() {
+    const transactionReducer=(balance,action)=>{
+        console.log("balance...",balance,".....",action.playload,"type...",action.type);
+        switch(action.type)
+        {
+            case 'WITHDRAW':
+                return balance-action.playload;
+
+            case 'DEPOSIT' :
+                return balance+action.playload;
+
+        }
+    }
+
+
+    const withdraw=(amount)=>{
+        dispatch({type:'WITHDRAW',playload:amount})
+    }
+
+    const deposit=(amount)=>{
+        dispatch({type:'DEPOSIT',playload:amount})
+    }
+
+    const[balance,dispatch]=useReducer(transactionReducer,7000)
+    return(
+        <>
+        <h1>balance is {balance}</h1>
+        <button onClick={()=>{withdraw(1000)}}>Withdraw</button>
+        <button onClick={()=>{deposit(5000)}}>Deposit</button>
+        </>
+    )
+
+
+}
+===========================
+Proops Drilling
+
+import React from "react";
+import Child1 from "./Child1"; 
+
+export default function Parent() {
+  const data = "Abhi"; 
+
+  return (
+    <div>
+      <h1>Parent</h1>
+      <Child1 data={data} /> 
+    </div>
+  );
+}
+=======================
+import { useState } from "react";
+import Child2 from "./Child2";
+
+export default function Child1() {
+  const [user] = useState("parent");
+  const [childData, setChildData] = useState(""); 
+
+ 
+  const handleChildData = (data) => {
+    setChildData(data);
+  };
+
+  return (
+    <>
+      <h1>This is C1.........</h1>
+      <Child2 user={user} sendDataToParent={handleChildData} />
+      <h1>Data from my child: {childData}</h1>
+    </>
+  );
+}
+================================================
+import { useState } from "react";
+
+export default function Child2({ user, sendDataToParent }) {
+  const [stu] = useState("I'm your student");
+  const sendData = () => {
+    sendDataToParent(stu);
+  };
+
+  return (
+    <>
+      <p>This is C2</p>
+      <p>
+        C2: The data coming from C1 is <b>{user}</b>
+      </p>
+      <button onClick={sendData}>Send Data to Parent</button>
+    </>
+  );
+}
+=========================================
+import React from "react";
+import Child4 from "./Child4";
+
+export default function Child3({ data }) {
+  const items = [1, 232, 4, 32];
+  return (
+    <div> 
+      <ul>
+        {items.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+      <div>
+        <h2>C3</h2>
+        <Child4 data={data} />
+      </div>
+    </div>
+  );
+}
+=====================================
+import React from "react";
+
+export default function Child5({ data }) {
+  return (
+    <div>
+      <h2>C5</h2>
+      <p>the data is {data}</p>
+    </div>
+  );
+}
+===================================
+DAY-4
+Form using hooks
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setUsers } from "./slices/userSlice";
+function Form1() {
+  const [input, setinput] = useState({
+    name: "",
+    roll: "",
+    address: "",
+  });
+
+  const dispatch = useDispatch();
+  const addUser = (formdata) => {
+          formdata.preventDefault();
+          dispatch(setUsers(input));
+        };
+  
+
+  function formSubmit(formdata) {
+    formdata.preventDefault();
+  }
+
+  return (
+    <>
+      {/* <form onSubmit={formSubmit}>
+        Name:
+        <input
+          type="text"
+          onChange={(data) => setinput({ ...input, name: data.target.value })}
+        />
+        Rollno:
+        <input
+          type="text"
+          onChange={(data) => setinput({ ...input, roll: data.target.value })}
+        />
+        Address:
+        <input
+          type="text"
+          onChange={(data) => setinput({ ...input, address: data.target.value })}
+        />
+         <div>
+                <button type="submit">Signup</button>
+                </div>
+                <input type="submit" onClick={addUser} value="AddUser" />
+
+      </form>
+      <h1>The name is: {input.name}</h1>
+      <h1>The rollno is: {input.roll}</h1>
+      <h1>The address is: {input.address}</h1> */}
+      <div class="container">
+      <form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name</label>
+    <input type="email" onChange={(data) => setinput({ ...input, name: data.target.value })} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name"/>
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Roll No</label>
+    <input type="text"  onChange={(data) => setinput({ ...input, roll: data.target.value })} class="form-control" id="exampleInputPassword1" aria-describedby="emailHelp" placeholder="Enter RollNo"/>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Address</label>
+    <input type="password" onChange={(data) => setinput({ ...input, address: data.target.value })} class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Address"/>
+    
+  </div>
+  <button type="submit" onClick={addUser} class="btn btn-warning">Submit</button>
+  {/* <button type="submit" onClick={addUser}  class="btn btn-primary">Submit</button> */}
+</form>
+</div>
+<h2>The name is: {input.name}</h2>
+      <h2>The rollno is: {input.roll}</h2>
+      <h2>The address is: {input.address}</h2> 
+    </>
+
+  );
+}
+
+export default Form1;
+App.js
+import logo from './logo.svg';
+import './App.css';
+import Home from './Home';
+import Contact from './Contact';
+import Aboutus from './Aboutus';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import User from './User';
+import NewBook from './NewBook';
+import OldBook from './OldBook';
+import Form1 from './Form1';
+import Array from './Array';
+import ArrayDisplay from './ArrayDisplay';
+function App() {
+  return (
+    <>
+    
+    <h1>Let's learn mern stack</h1>
+    <BrowserRouter>
+    <ul>
+     <li><Link to="/">HOME</Link> </li>
+     <li><Link to="/aboutus">ABOUT</Link> </li>
+     <li><Link to="/contact-us">CONTACT</Link> </li> 
+     <li><Link to="/user">USER</Link> </li>  
+     <li><Link to="/books/new-book">NEW-BOOK</Link> </li>
+     <li><Link to="/books/old-book">OLD-BOOK</Link> </li>
+     <li><Link to="/form1">Form</Link> </li>
+     <li><Link to="/array">Array</Link> </li>
+     <li><Link to="/arraydisp">ArrayDisplay</Link> </li>
+    </ul>
+        <Routes>
+          <Route path='/' element={<Home/>}></Route>
+          <Route path='/aboutus' element={<Aboutus/>}></Route> 
+          <Route path='/contact-us' element={<Contact/>}></Route>
+          <Route path='/user' element={<User/>}></Route>
+          <Route path='/books'>
+          <Route path='new-book' element={<NewBook/>}></Route>
+          <Route path='old-book' element={<OldBook/>}></Route>
+          </Route>
+          <Route path='/form1' element={<Form1/>}></Route>
+          <Route path='/array' element={<Array/>}></Route>
+          <Route path="/arraydisp" element={<ArrayDisplay/>}></Route>
+
+        </Routes>
+    </BrowserRouter>
+
+    </>
+  )
+   
+}
+
+export default App;
+===========================================
+Assignment
+Invoices.js
+import { Routes, Route, Link } from "react-router-dom";
+import InvoiceDetails from "./InvoiceDetails";
+
+export default function Invoices() {
+    const invoices = [
+        { name: "Abhi", number: "1", amount: 60000, due: "12/09/2024" },
+        { name: "Saai", number: "2", amount: 30000, due: "10/09/2024" },
+        { name: "Tamil", number: "3", amount: 10000, due: "8/09/2024" },
+        { name: "Sree", number: "4", amount: 70000, due: "2/09/2024" },
+    ];
+
+    return (
+        <>
+            <h1>I am from invoices</h1>
+            <p>
+                <Link to="/invoice/persons/1" style={{ marginRight: "20px" }}>Abhi</Link>
+                <Link to="/invoice/persons/2" style={{ marginRight: "20px" }}>Saai</Link>
+                <Link to="/invoice/persons/3" style={{ marginRight: "20px" }}>Tamil</Link>
+                <Link to="/invoice/persons/4">Sree</Link>
+            </p>
+            <Routes>
+                <Route path="persons/:number" element={<InvoiceDetails invoices={invoices} />} />
+            </Routes>
+        </>
+    );
+}
+============================================
+InvoiceDetails.js
+import { useParams } from "react-router-dom";
+
+export default function InvoiceDetails({ invoices }) {
+    const { number } = useParams();
+    const invoice = invoices.find((inv) => inv.number.toString() === number); 
+
+    if (!invoice) {
+        return <h2>Invoice not found</h2>;
+    }
+
+    return (
+        <div>
+            <h1>Invoice Details</h1> 
+            <p> I m the invoice {invoice.number}</p>
+        </div>
+    );
+}
+============================================
+Expenses.js
+export default function Expenses()
+{
+    return(
+        <>
+        <h1>This is Expense Page</h1>
+        </>
+    )
+}
+==========================================
+
+DAY-5
+
+Using Redux
+apps-store.js
+import { configureStore } from "@reduxjs/toolkit";
+import userReducer from '../slices/userSlice';
+import fruitReducer from '../slices/fruitSlice';
+import arrayReducer from '../slices/arraySlice';
+
+
+
+const store = configureStore({
+    reducer:{
+        userInfo:userReducer,
+        fruitsInfo:fruitReducer,
+        arrayInfo:arrayReducer
+    }
+})
+export default store
+=====================================
+slices-userSlice.js
+import {createSlice} from '@reduxjs/toolkit'
+const initialState={
+    eusers:[]
+}
+export const userSlice = createSlice({
+    name:'mySlice',
+    initialState,
+    reducers:{
+        setUsers: (state,action)=>{
+            state.eusers=[...state.eusers,action.payload]
+        },
+        deleteUser:(state,action)=>{
+            state.eusers=state.eusers.filter((user,index)=>index!==action.payload)
+        }
+
+
+    }
+})
+export const {setUsers,deleteUser}=userSlice.actions
+export default userSlice.reducer
+===========================================
+slices-fruitSlice.js
+
+import {createSlice} from '@reduxjs/toolkit'
+const initialState={
+    eusers:[],
+    fruits:[]
+}
+export const fruitSlice = createSlice({
+    name:'mySlice1',
+    initialState,
+    reducers:{
+        setFruit: (state,action)=>{
+            state.fruits=[...state.fruits,action.payload]
+        }
+    }
+})
+export const {setFruit}=fruitSlice.actions
+export default fruitSlice.reducer
+==========================================
+DAY-6
+
+Recapping of concepts from Day1 to Day 5
+==========================================
+DAY-7
+
+Assignment
+slices-arraySlice.js
+import { createSlice } from "@reduxjs/toolkit"
+
+const initialState={
+    array:[]
+}
+
+export const arraySlice=createSlice(
+    {
+        name:'arraySlice',
+        initialState,
+        reducers:{
+            setArray:(state,action)=>{
+                state.array=[...state.array,action.payload]
+            }
+        }
+    }
+)
+export const {setArray} = arraySlice.actions
+export default arraySlice.reducer
+
+
+============================================
+DAY-8
+
+1.show dbs
+2.use student
+3. db.students.insertOne({name:'Abhi',rollno:'23AD002'})
+4.db.students.find()
+5. db.student.insertOne({name:'Saai',rollno:34,age:20,details:{salary:34000,role:'Java Developer'}})
+6. db.student.findOne()
+7.db.student.insertMany([{name:'Tamil',rollno:45},{name:'Gomathi',rollno:18},{name:'Janani',rollno:07}])
+8.db.students.find().toArray()
+9.db.students.find().forEach((d)=>print('the data : ',d))
+10.db.student.find({name:'Tamil'})
+11.db.student.find({'details.role':'Java Developer'})
+=====================================
+DAY-9
+Installation
+
+1.create a folder=> go to that path=>code .(It will open vscode)
+2.npm i --s express express-handlebars body-parser
+3.npm i --g nodemon=>after this installition server gets restarted automatically
+
+
+I.express-It is a fast,minimalist web framework for Node.js.It provides tools to build web applications and API
+
+usage:
+   To handle HTTP requests and responses
+   To create routes for different endpoints(e.g,GET,POST,PUT,DELETE)
+   To integrate middleware for processing requests
+
+II.express-handlebars-his package is an Express.js template engine for rendering dynamic HTML pages using Handlebars syntax.
+
+Usage:
+  to serve dynamic content by combining HTML templates with javascript data.
+  to create reusable components like headers,footers, etc,., using handlebar partials.
+
+
+
+
+III.body-parser-Purpose:
+   body-parser is middleware that parses incoming request bodies in a middleware before your handlers, making the request data accessible in req.body. it is especially useful for handling POST requests.
+
+Usage:
+ to parse JSON data from the request body
+ to parse URL-encoded data from forms
+
+4.npm i mongodb(install mongodb driver)
+=========================================================
+DAY-10
+app.js
+
+code
+const exhbs = require('express-handlebars');
+const app = express();
+app.engine('hbs',
+    exhbs.engine({
+        layoutsDir:'viewsfold/',
+        defaultLayout:'maincopy',
+        extname:'hbs',
+    })
+);
+
+app.set('views engine','hbs');
+app.set('views','viewsfold');
+
+code app.js
+
+const express=require('express');
+const exhbs=require('express-handlebars')
+const app=express()
+// Config Handlebars
+app.engine('hbs',
+    exhbs.engine({
+        layoutsDir:'viewsfold/',
+        defaultLayout:'maincopy',
+        extname:'hbs'
+    }
+        
+    )
+)
+
+app.set('view engine','hbs')
+app.set('views','viewsfold')
+
+// Routes
+
+app.get('/',(req,res)=>
+{
+    const msg='test';
+    res.render('maincopy',{msg})
+}
+)
+// Start the server
+
+app.listen(8000,()=>
+{
+    console.log('Listening on port 8000.....')
+})
+
+db.js
+
+const mongodb = require('mongodb');
+const mongoClient = mongodb.MongoClient;
+let database;
+function getDatabase(){
+    const client = mongoClient.connect('mongodb://127.0.0.1:27017');
+    database = client.db('t1');
+    if(!database){
+        console.log('Database connected successfully');
+    }
+    else{
+        console.log('Database connection failed');
+    }
+    return database;
+}
+module.exports = { getDatabase };
+
+
+const express=require('express');
+const exhbs=require('express-handlebars')
+const app=express()
+const dbo = require('./db')
+
+
+// Config Handlebars
+app.engine('hbs',
+    exhbs.engine({
+        layoutsDir:'viewsfold/',
+        defaultLayout:'maincopy',
+        extname:'hbs'
+    }
+        
+    )
+);
+
+app.set('view engine','hbs')
+app.set('views','viewsfold')
+
+// Routes
+
+app.get('/', async (req,res)=>
+{
+    let database = await dbo.getDatabase();
+    const collection = database.collection('emp')
+    const cursur = collection.find({})
+    let datas = await cursur.toArray()
+    const msg='';
+    console.log('the data',datas)
+    res.render('maincopy',{msg,datas})
+}
+);
+// Start the server
+
+app.listen(8000,()=>
+{
+    console.log('Listening on port 8000.....')
+})
+
+Db.js
+const mongodb = require('mongodb');
+const mongoClient = mongodb.MongoClient;
+let database;
+async function getDatabase(){
+    const client = await mongoClient.connect('mongodb://127.0.0.1:27017');
+    database = client.db('t1');
+    if(!database){
+        console.log('Database connected successfully');
+    }
+    else{
+        console.log('Database connection failed');
+    }
+    return database;
+}
+module.exports = { getDatabase };
+
+maincopy.hbs
+
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>MONGODB CRUD</title>
+    </head>
+    <body>
+        <h1>MONGODB CRUD EXAMPLE</h1>
+        <ul>
+            {{#each datas}}
+            <li>{{this.empid}} {{this.empname}} </li>
+            {{/each}}
+        </ul>
+        <p>{{msg}}</p>
+    </body>
+</html>
+
+==========================================================
+DAY-11
+find- return cursor object-call the toArray&foreach function
+db.products.insertMany([{ name: 'pen', price: 50 },{ name: 'Baloon', price: 10 }])
+ db.products.find({ price: { $lt: 100 } })
+db.products.find({ price: { $lte: 100 } })
+ db.products.find({ price: { $gt: 100 } })
+ db.products.find({ price: { $gte: 100 } })
+db.products.find({ price: { $gte: 50, $lte: 150 } })
+ db.products.insertMany([{name:'Fan',price:1000,catogary:'Electronics'},{name:'Iphone',price:50000,catogary:'Electronics'},{name:'Eyeliner',price:700,catogary:'Cosmetics'}])
+ db.products.find({$and:[{price:{$gte:150}},{catogary:'Electronics'}]})
+ db.products.find({$or:[{price:{$gt:150}},{catogary:'Electronics'}]})
+db.products.find({$nor:[{price:{$lt:100}},{price:{$gt:500}}]})
+ db.emp.find({},{details:1})-projection
+ db.emp.find({}).limit(2)-display first two data
+ db.emp.find({}).skip(2)-skip first two data
+App.js
+const express=require('express');
+const bodyParser = require('body-parser');
+const exhbs=require('express-handlebars')
+const app=express()
+const dbo = require('./db')
+
+
+app.engine('hbs',
+    exhbs.engine({
+        layoutsDir:'viewsfold/',
+        defaultLayout:'maincopy',
+        extname:'hbs'
+    }
+        
+    )
+);
+
+app.set('view engine','hbs');
+app.set('views','viewsfold');
+app.use(bodyParser.urlencoded({extended:true}));
+
+
+app.get('/', async (req,res)=>
+{
+    let database = await dbo.getDatabase();
+    const collection = database.collection('emp')
+    const cursur = collection.find({})
+    let datas = await cursur.toArray()
+ let msg='';
+
+    if(req.query.status==='1')
+       msg="inserted................."
+    console.log('the data',datas)
+    res.render('maincopy',{msg,datas})
+}
+);
+
+app.post('/empinfo',async (req,res) => {
+    const database = await dbo.getDatabase();
+    const collection = database.collection('emp');
+    const employee = { empid: req.body.eid,empname:req.body.ename };
+    await collection.insertOne(employee);
+    res.redirect('/?status=1');
+});
+
+app.listen(8000,()=>
+{
+    console.log('Listening on port 8000.....')
+});
+
+
+Maincopy.hbs
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MONGODB PROJECT</title>
+    </head>
+
+    <body>
+        <h1>Mongodb Project</h1>
+        <h3> Create Form</h3>
+        <form action ="/empinfo"method="post">
+        <label for="">EMP Id</label>
+        <input type="text" name="eid">
+        <label for="">EMP Name</label>
+        <input type="text" name="ename">
+        <input type="submit">
+        </form><br><br>
+        <br><br>
+
+        <ul>
+            {{#each datas}}
+            <li>{{this.empid}} {{this.empname}} </li>
+            {{/each}}
+        </ul>
+
+        <p>{{msg}}</p>
+
+    </body>
+</html>
+========================
+Maincopy.hbs
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MONGODB PROJECT EXAMPLE</title>
+    </head>
+    <body>
+        <h1>Mongodb Project</h1>
+        <h3> Create Form</h3>
+        <form action ="/empinfo"method="post">
+        <label for="">Id</label>
+        <input type="text" name="eid">
+        <label for="">Name</label>
+        <input type="text" name="ename">
+        <input type="submit">
+        </form><br><br>
+        <br><br>
+        <ul>
+            {{#each datas}}
+            <li>{{this.empid}} {{this.empname}} <a href ="/?edit_idd ={{this_id}}">Edit</a>
+            </li>
+            {{/each}}
+        </ul>
+        <p>{{msg}}</p>
+    </body>
+</html>
+============================
+DAY-12
+ db.emp.find({},{details:1})-projection
+ db.emp.find({}).limit(2)-display first two data
+ db.emp.find({}).skip(2)-skip first two data
+=============================================
